@@ -1,0 +1,78 @@
+﻿@model ecommerce.Common.Entities.User
+@{
+    ViewData["Title"] = "Agregar o Editar";
+}
+<br />
+
+<div style="border:none; margin:10vh;">
+    <div class="row">
+        <form class="col s12" asp-action="AddOrEdit" enctype="multipart/form-data" method="post">
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">person</i>
+                    <input required asp-for="FirstName" placeholder="Nombre" type="text" class="validate" />
+                </div>
+
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">group</i>
+                    <input required asp-for="LastName" placeholder="Apellidos" type="text" class="validate" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">email</i>
+                    <input required asp-for="Email" placeholder="Correo" type="email" class="validate" />
+                </div>
+
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">location_on</i>
+                    <input asp-for="Address" placeholder="Direccion" type="text" class="validate" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s3">
+                    <i class="material-icons prefix">phone</i>
+                    <input required asp-for="PhoneNumber" placeholder="Telefono" type="text" class="validate" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s4">
+                    <p>
+                        <label>
+                            <input asp-for="IsActive" type="checkbox" id="checkActivo"/>
+                            <span>Esta activo</span>
+                        </label>
+                    </p>
+                </div>
+
+                <div class="input-field col s4">
+                    <p>
+                        <label>
+                            <input asp-for="IsAdmin" type="checkbox" id="checkAdmin" />
+                            <span>Es administrador</span>
+                        </label>
+                    </p>
+                </div>
+            </div>
+
+            <br />
+            <div class="row">
+                <button class="contenedor-btn-file">
+                    <i class="material-icons prefix">publish</i>
+                    Subir archivo
+                    <label for="btn-file"></label>
+                    <input type="file" id="btn-file" />
+                </button>
+
+                <button class="btn waves-effect waves-light" type="submit" name="action">
+                    Registrar usuario
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+

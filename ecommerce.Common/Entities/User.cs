@@ -28,9 +28,8 @@ namespace ecommerce.Common.Entities
         public string Address { get; set; }
 
         [Display(Name = "Telefono")]
-        [Phone]
-        [MaxLength(10, ErrorMessage = "No puedes ingresar mas de {1} caracteres")]
-        public int PhoneNumber { get; set; }
+        [MaxLength(10)]
+        public string PhoneNumber { get; set; }
 
         [Display(Name = "Es Activo")]
         public bool IsActive { get; set; }
